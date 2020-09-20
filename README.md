@@ -29,7 +29,7 @@
 | end_time      | time       | null: false                    |
 | break_start   | time       |                                |
 | break_end     | time       |                                |
-| user_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 
