@@ -1,6 +1,6 @@
 class ShiftsController < ApplicationController
   def index
-    @user = User.all
+    @user = User.includes(:user_id)
     @shift = Shift.all
   end
   def new

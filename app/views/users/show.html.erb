@@ -4,6 +4,41 @@
 <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
 <ul>
   <li class="form-group">
+    <div class="work_day">
+    <%= f.date_field :work_day, value: Time.now.next_week(:monday), class:"input-default", id:"work_day", autofocus: true %>
+    <% Time.now.next_week(:monday).day %></div>
+  </li>
+  <li class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">出勤可能時間</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.time_field :start_time, class:"input-default", id:"start_time" %>
+  </li>
+  <li class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">退勤希望時間</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.time_field :end_time, class:"input-default", id:"end_time", autofocus: true %>
+  </li>
+  <li class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">休憩開始希望時間</label>
+      <span class="indispensable">任意</span>
+    </div>
+    <%= f.time_field :break_start, class:"input-default", id:"break_start", autofocus: true %>
+  </li>
+  <li class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">休憩終了希望時間</label>
+      <span class="indispensable">任意</span>
+    </div>
+    <%= f.time_field :break_end, class:"input-default", id:"break_end", autofocus: true %>
+  </li>
+</ul>
+<ul>
+  <li class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">日付</label>
       <span class="indispensable">必須</span>
@@ -39,7 +74,8 @@
     <%= f.time_field :break_end, class:"input-default", id:"break_end", autofocus: true %>
   </li>
 </ul>
+
   <div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-red-btn" %>
+    <%= f.submit "予定提出" ,class:"register-red-btn" %>
   </div>
 <% end %>

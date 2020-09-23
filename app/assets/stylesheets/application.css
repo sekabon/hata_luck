@@ -13,4 +13,17 @@
  *= require_tree .
  *= require_self
  */
- 
+ul{
+  display: flex;
+  /* justify-content: space-around; */
+}
+li{
+  justify-content: space-around;
+  margin-left: 15px;
+  
+}
+.work_day{
+  font-size: 32px;
+  text-align: center;
+  justify-content: center;
+}
