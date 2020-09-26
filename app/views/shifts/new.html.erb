@@ -1,0 +1,55 @@
+<h1><%= current_user.last_name %>さんのページ</h1>
+ <h2>予定を教えて下さい</h2>
+
+<%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
+    <ul>
+     <li>
+      <div class='form-text-wrap'>
+       <label class="form-text">日付はそのまま</label>
+       <span class="indispensable">(必須)</span>
+      </div>
+      <div class="datetime">
+       <%= f.date_select :work_day, date_separator: "/", use_month_numbers: true, discard_year: true, default: Time.now.since(2.weeks).monday, class:"input-default", id:"work_day" %>(月)
+      </div>
+     </li>
+     <li>
+      <div class='form-text-wrap'>
+       <label class="form-text">出勤時間</label>
+       <span class="indispensable">(必須)</span>
+      </div>
+      <div class="datetime">
+       <%= f.time_select :start_time, average_lap: true, include_blank: "-", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>
+      </div>
+     </li>
+     <li>
+      <div class='form-text-wrap'>
+       <label class="form-text">退勤時間</label>
+       <span class="indispensable">(必須)</span>
+      </div>
+      <div class="datetime">
+       <%= f.time_select :end_time, include_blank: "-", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>
+      </div>
+     </li>
+      <li>
+        <div class='form-text-wrap'>
+          <label class="form-text">休憩開始</label>
+          <span class="indispensable">(任意)</span>
+        </div>
+        <div class="datetime">
+          <%= f.time_select :break_start, include_blank: "-", start_hour: 10, end_hour: 21, minute_step: 15, class:"input-default", id:"break_start" %>
+        </div>
+      </li>
+      <li>
+        <div class='form-text-wrap'>
+          <label class="form-text">休憩終了</label>
+          <span class="indispensable">(任意)</span>
+        </div>
+        <div class="datetime">
+          <%= f.time_select :break_end, include_blank: "-", start_hour: 11, end_hour: 22, minute_step: 15, class:"input-default", id:"break_end" %>
+        </div>
+      </li>
+    </ul> 
+    <div class='register-btn'>
+      <%= f.submit "予定提出", class:"register-red-btn" %>
+    </div>
+<% end %>
