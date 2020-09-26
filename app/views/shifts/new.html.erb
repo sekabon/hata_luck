@@ -1,15 +1,16 @@
-<h1><%= current_user.last_name %>さんのページ</h1>
- <h2>予定を教えて下さい</h2>
+<h1><%= current_user.last_name %>さんの</h1>
+ <h2><%= Time.now.since(2.weeks).monday.strftime('%m/%d') %>(月)から一週間の予定を教えて下さい。</h2>
+ <h3>(締切は<%= Time.now.next_week.monday.-(1.day).strftime('%m/%d') %>(日)です。)</h3>
 
 <%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
     <ul>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">日付はそのまま</label>
+       <label class="form-text">日付</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.date_select :work_day, date_separator: "/", use_month_numbers: true, discard_year: true, default: Time.now.since(2.weeks).monday, class:"input-default", id:"work_day" %>(月)
+       <%= f.date_select :work_day, date_separator: "月", use_month_numbers: true, discard_year: true, default: Time.now.since(2.weeks).monday, class:"input-default", id:"work_day" %>日
       </div>
      </li>
      <li>
@@ -18,7 +19,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :start_time, average_lap: true, include_blank: "-", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>
+       <%= f.time_select :start_time, average_lap: true, include_blank: "-", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>から
       </div>
      </li>
      <li>
@@ -27,7 +28,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :end_time, include_blank: "-", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>
+       <%= f.time_select :end_time, include_blank: "-", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>まで
       </div>
      </li>
       <li>
