@@ -56,3 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'devise'
 gem 'jc-validates_timeliness'
+gem 'rails-i18n'
+
+group :production do
+  gem 'rails_12factor'
+end
