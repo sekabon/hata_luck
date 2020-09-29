@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "shifts#index"
   devise_for :users
   #resources :users, only: :show
-  resources :shifts, only: [:index, :new, :create]
+  resources :shifts, only: [:index, :new, :create, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end

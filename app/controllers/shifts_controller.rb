@@ -17,6 +17,9 @@ class ShiftsController < ApplicationController
       render :new
     end
   end
+  def show
+    @shift = Shift.includes(:user)
+  end
 
   private
 
