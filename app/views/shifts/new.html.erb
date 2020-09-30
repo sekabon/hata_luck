@@ -3,7 +3,7 @@
  <h3>(締切は<%= Time.now.next_week.monday.-(1.day).strftime('%m/%d') %>(日)です。)</h3>
 
 <%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
-    <%#= render 'layouts/error_messages', model: @shift %> 
+    <%= render 'layouts/error_messages', model: @shift %> 
     <ul>
      <li>
       <div class='form-text-wrap'>
