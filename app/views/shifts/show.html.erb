@@ -1,11 +1,6 @@
-<h2>予定の確認</h2>
+<h1>予定の確認</h1>
 <% next_mon=Time.now.next_week.monday %>
-<% next_tue=next_mon.+(1.day) %>
-<% next_wed=next_mon.+(2.days) %>
-<% next_thu=next_mon.+(3.days) %>
-<% next_fri=next_mon.+(4.days) %>
-<% next_sat=next_mon.+(5.days) %>
-<% next_sun=next_mon.+(6.days) %>
+<h2><%= next_mon.strftime('%m/%d') %>からの一週間</h2>
 <h3>
   <%= next_mon.strftime('%m/%d') %>(月)
 </h3>
@@ -21,7 +16,9 @@
       <% end %>
     </li>
   <% end %>
+  
 <h3>
+  <% next_tue=next_mon.+(1.day) %>
   <%= next_tue.strftime('%m/%d') %>(火)
 </h3>
   <% @shift_tue=@shift.where(work_day:next_tue) %>
@@ -37,6 +34,7 @@
       </li>
     <% end %>
 <h3>
+  <% next_wed=next_mon.+(2.days) %>
   <%= next_wed.strftime('%m/%d') %>(水)
 </h3>
  <% @shift_wed=@shift.where(work_day:next_wed) %>
@@ -52,6 +50,7 @@
     </li>
   <% end %>
 <h3>
+  <% next_thu=next_mon.+(3.days) %>
   <%= next_thu.strftime('%m/%d') %>(木)
 </h3>
  <% @shift_thu=@shift.where(work_day:next_thu) %>
@@ -67,6 +66,7 @@
     </li>
   <% end %>
 <h3>
+  <% next_fri=next_mon.+(4.days) %>
   <%= next_fri.strftime('%m/%d') %>(金)
 </h3>
  <% @shift_fri=@shift.where(work_day:next_fri) %>
@@ -82,6 +82,7 @@
     </li>
   <% end %>
 <h3>
+  <% next_sat=next_mon.+(5.days) %>
   <%= next_sat.strftime('%m/%d') %>(土)
 </h3>
  <% @shift_sat=@shift.where(work_day:next_sat) %>
@@ -97,10 +98,125 @@
     </li>
   <% end %>
 <h3>
+  <% next_sun=next_mon.+(6.days) %>
   <%= next_sun.strftime('%m/%d') %>(日)
 </h3>
  <% @shift_sun=@shift.where(work_day:next_sun) %>
   <% @shift_sun.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+<% next2_mon=Time.now.since(2.weeks).monday %>
+<h2><%= next2_mon.strftime('%m/%d') %>からの一週間</h2>
+<h3>
+  <%= next2_mon.strftime('%m/%d') %>(月)
+</h3>
+ <% @shift_2mon=@shift.where(work_day:next2_mon) %>
+  <% @shift_2mon.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+  
+<h3>
+  <% next2_tue=next2_mon.+(1.day) %>
+  <%= next2_tue.strftime('%m/%d') %>(火)
+</h3>
+  <% @shift_2tue=@shift.where(work_day:next2_tue) %>
+    <% @shift_2tue.each do |shift| %>
+      <li>
+          <%= shift.user.last_name %>さん
+          <%= shift.start_time.strftime('%H:%M') %>〜
+          <%= shift.end_time.strftime('%H:%M') %>
+        <% if shift&.break_start.present? %>
+          休憩<%= shift.break_start.strftime('%H:%M') %>〜
+          <%= shift.break_end.strftime('%H:%M') %>
+        <% end %>
+      </li>
+    <% end %>
+<h3>
+  <% next2_wed=next2_mon.+(2.days) %>
+  <%= next2_wed.strftime('%m/%d') %>(水)
+</h3>
+ <% @shift_2wed=@shift.where(work_day:next2_wed) %>
+  <% @shift_2wed.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+<h3>
+  <% next2_thu=next2_mon.+(3.days) %>
+  <%= next2_thu.strftime('%m/%d') %>(木)
+</h3>
+ <% @shift_2thu=@shift.where(work_day:next2_thu) %>
+  <% @shift_2thu.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+<h3>
+  <% next2_fri=next2_mon.+(4.days) %>
+  <%= next2_fri.strftime('%m/%d') %>(金)
+</h3>
+ <% @shift_2fri=@shift.where(work_day:next2_fri) %>
+  <% @shift_2fri.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+<h3>
+  <% next2_sat=next2_mon.+(5.days) %>
+  <%= next2_sat.strftime('%m/%d') %>(土)
+</h3>
+ <% @shift_2sat=@shift.where(work_day:next2_sat) %>
+  <% @shift_2sat.each do |shift| %>
+    <li>
+        <%= shift.user.last_name %>さん
+        <%= shift.start_time.strftime('%H:%M') %>〜
+        <%= shift.end_time.strftime('%H:%M') %>
+      <% if shift&.break_start.present? %>
+        休憩<%= shift.break_start.strftime('%H:%M') %>〜
+        <%= shift.break_end.strftime('%H:%M') %>
+      <% end %>
+    </li>
+  <% end %>
+<h3>
+  <% next2_sun=next2_mon.+(6.days) %>
+  <%= next2_sun.strftime('%m/%d') %>(日)
+</h3>
+ <% @shift_2sun=@shift.where(work_day:next2_sun) %>
+  <% @shift_2sun.each do |shift| %>
     <li>
         <%= shift.user.last_name %>さん
         <%= shift.start_time.strftime('%H:%M') %>〜
