@@ -18,7 +18,9 @@ class ShiftsController < ApplicationController
     end
   end
   def show
+    #binding.pry
     @shift = Shift.includes(:user)
+
   end
 
   private
