@@ -6,7 +6,7 @@
     </h1>
   </div>
   
-  <%#= render 'shared/error_messages', model: @user %>
+  <%= render 'devise/shared/error_messages', model: @user %>
   
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -64,7 +64,7 @@
                     id:"birthday",
                     use_month_numbers: true,
                     prompt:'--',
-                    start_year: 1930,
+                    start_year: 1940,
                     end_year: (Time.now.year - 5),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>

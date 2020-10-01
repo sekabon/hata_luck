@@ -8,3 +8,8 @@ h3{
   font-size: 1.3em;
   margin-bottom: 20px;
 }
+li{
+  list-style: none;
+  margin-left: 15px;
+  margin-bottom: 5x;
+}

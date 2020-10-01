@@ -22,12 +22,9 @@ ul{
   margin-top: 8px;
   margin-left: 32px;
 }
-select::-ms-expand {
-	display: none;
-}
+
 select {
 	-webkit-appearance: none; 
-	-moz-appearance: none;
 	appearance: none;
 	margin-bottom: 20px;
 	padding: 10px 10px 5px 10px;

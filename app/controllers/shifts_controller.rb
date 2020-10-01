@@ -9,13 +9,15 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @shift = Shift.new(shift_params)
     if @shift.save  
       redirect_to root_path
     else
       render :new
     end
+  end
+  def show
+    @shift = Shift.includes(:user)
   end
 
   private

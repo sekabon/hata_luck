@@ -3,7 +3,7 @@
  <h3>(締切は<%= Time.now.next_week.monday.-(1.day).strftime('%m/%d') %>(日)です。)</h3>
 
 <%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
-    <%#= render 'layouts/error_messages', model: @shift %> 
+    <%= render 'layouts/error_messages', model: @shift %> 
     <ul>
      <li>
       <div class='form-text-wrap'>
@@ -20,7 +20,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :start_time, average_lap: true, include_blank: "-", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>から
+       <%= f.time_select :start_time, ignore_date: true, include_blank: "--", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>から
       </div>
      </li>
      <li>
@@ -29,7 +29,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :end_time, include_blank: "-", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>まで
+       <%= f.time_select :end_time, ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>まで
       </div>
      </li>
       <li>
@@ -38,7 +38,7 @@
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
-          <%= f.time_select :break_start, include_blank: "-", start_hour: 10, end_hour: 21, minute_step: 15, class:"input-default", id:"break_start" %>
+          <%= f.time_select :break_start, ignore_date: true, include_blank: "--", start_hour: 10, end_hour: 21, minute_step: 15, class:"input-default", id:"break_start" %>
         </div>
       </li>
       <li>
@@ -47,7 +47,7 @@
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
-          <%= f.time_select :break_end, include_blank: "-", start_hour: 11, end_hour: 22, minute_step: 15, class:"input-default", id:"break_end" %>
+          <%= f.time_select :break_end,ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 22, minute_step: 15, class:"input-default", id:"break_end" %>
         </div>
       </li>
     </ul> 
