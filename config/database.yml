@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: hata_luck_production
-  username: hata_luck
-  password: <%= ENV['HATA_LUCK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
