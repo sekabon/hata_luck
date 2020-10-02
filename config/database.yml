@@ -16,7 +16,6 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
-
 development:
   <<: *default
   database: hata_luck_development
