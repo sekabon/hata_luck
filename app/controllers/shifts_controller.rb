@@ -10,12 +10,13 @@ class ShiftsController < ApplicationController
 
   def create
     @shift = Shift.new(shift_params)
-    if @shift.save  
+    if @shift.save
       redirect_to root_path
     else
       render :new
     end
   end
+
   def show
     @shift = Shift.includes(:user)
   end

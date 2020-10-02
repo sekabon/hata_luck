@@ -13,6 +13,5 @@ class User < ApplicationRecord
   validates :last_name_kana, :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナで入力してください' }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: 'はアットマークを含めて入力してください' }
 
-
   has_many :shifts
 end
