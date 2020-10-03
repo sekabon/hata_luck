@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+lock "3.14.1"
 
 set :application, "hata_luck"
 set :repo_url, "git@github.com:sekabon/hata_luck.git"
