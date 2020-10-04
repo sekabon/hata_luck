@@ -4,16 +4,22 @@ class ShiftsController < ApplicationController
     @shift = Shift.includes(:user)
   end
 
-  def new
-    @shift = Shift.new
-  end
 
   def create
     @shift = Shift.new(shift_params)
     if @shift.save
       redirect_to root_path
     else
-      render :new
+      render "users/new"
+    end
+  end
+
+  def update
+    shift = Shift.find(params[:id])
+    if shift.update(shift_params)
+      redirect_to root_path
+    else 
+      render :edit
     end
   end
 

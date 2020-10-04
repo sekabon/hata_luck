@@ -1,8 +1,7 @@
-<h1><%= current_user.last_name %>さんの</h1>
- <h2><%= Time.now.since(2.weeks).monday.strftime('%m/%d') %>(月)から一週間の予定を教えて下さい。</h2>
- <h3>(締切は<%= Time.now.next_week.monday.-(1.day).strftime('%m/%d') %>(日)です。)</h3>
-
- <%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
+<h3>この日の予定を編集しますか？</h3>
+<li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "sign-up" %></li>
+<li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
+<%= form_with model: @shift, class:'shift-main', local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
     <ul>
      <li>
@@ -52,23 +51,6 @@
       </li>
     </ul> 
     <div class='register-btn'>
-      <%= f.submit "予定提出", class:"register-red-btn" %>
+      <%= f.submit "予定変更", class:"register-red-btn" %>
     </div>
  <% end %>
-
-<h3>提出済みの予定はこちらです。</h3>
- <% @shift = Shift.where(user_id: current_user.id) %>
-  <% @shift.each do |shift| %>
-    <li>
-        <%= shift.work_day.strftime('%m/%d') %>
-        <%= shift.start_time.strftime('%H:%M') %>〜
-        <%= shift.end_time.strftime('%H:%M') %>
-      <% if shift&.break_start.present? %>
-        休憩<%= shift.break_start.strftime('%H:%M') %>〜
-        <%= shift.break_end.strftime('%H:%M') %>
-      <% end %> 
-        <%= link_to '変更する', edit_user_path(shift.id), method: :get, class:"register-red-btn" %>
-        <%= link_to '取り消す', user_path(shift.id), method: :delete, class:"register-red-btn" %>
-    </li>
-  <% end %>  
-<li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
