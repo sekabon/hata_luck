@@ -1,6 +1,8 @@
+<header>
 <h1>はたらっく</h1>
-<h3>このアプリはみんなの「はたらく」を「らく」にします。</h3>
-
+<h3>〜 このアプリはみんなの「はたらく」を「らく」にします 〜</h3>
+</header>
+<body>
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>
        <li><%= link_to '予定確認', shift_path(@shift), class: "admin-shift" %></li>
@@ -14,3 +16,4 @@
       <% end %>
       
     </ul>
+</body>

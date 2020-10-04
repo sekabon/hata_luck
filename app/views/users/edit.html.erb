@@ -1,6 +1,11 @@
-<h3>この日の予定を変更しますか？</h3>
-<li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "sign-up" %></li>
-<li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
+<header>
+  <h3>この日の予定を変更しますか？</h3>
+</header>
+    <ul>
+      <li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "sign-up" %></li>
+      <li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
+    </ul>
+
 <%= form_with model: @shift, class:'shift-main', local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
     <ul>

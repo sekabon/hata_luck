@@ -1,9 +1,11 @@
-<h1>予定の確認</h1>
-<% next_mon=Time.now.next_week.monday %>
-<h2><%= next_mon.strftime('%m/%d') %>からの一週間</h2>
-<h3>
-  <%= next_mon.strftime('%m/%d') %>(月)
-</h3>
+<header>
+  <h1>予定の確認</h1>
+</header>
+    <% next_mon=Time.now.next_week.monday %>
+  <h2><%= next_mon.strftime('%m/%d') %>(月)からの一週間</h2>
+  <h3>
+    <%= next_mon.strftime('%m/%d') %>(月)
+  </h3>
  <% @shift_mon=@shift.where(work_day:next_mon) %>
   <% @shift_mon.each do |shift| %>
     <li>
@@ -120,7 +122,7 @@
     </li>
   <% end %>
 <% next2_mon=Time.now.since(2.weeks).monday %>
-<h2><%= next2_mon.strftime('%m/%d') %>からの一週間</h2>
+<h2><%= next2_mon.strftime('%m/%d') %>(月)からの一週間</h2>
 <h3>
   <%= next2_mon.strftime('%m/%d') %>(月)
 </h3>
