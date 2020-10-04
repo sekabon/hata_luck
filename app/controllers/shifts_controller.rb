@@ -1,4 +1,5 @@
 class ShiftsController < ApplicationController
+
   def index
     @user = User.includes(:user)
     @shift = Shift.includes(:user)
@@ -17,7 +18,7 @@ class ShiftsController < ApplicationController
   def update
     shift = Shift.find(params[:id])
     if shift.update(shift_params)
-      redirect_to root_path
+      redirect_to root_path 
     else 
       render :edit
     end
@@ -25,9 +26,7 @@ class ShiftsController < ApplicationController
 
   def show
     @shift = Shift.includes(:user)
-    if user_signed_in? && current_user.admin?
-      redirect_to shift_path
-    else  
+    unless user_signed_in? && current_user.admin?
       render :index
     end
   end

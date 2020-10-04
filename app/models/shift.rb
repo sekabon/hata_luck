@@ -9,7 +9,7 @@ end
 class Shift < ApplicationRecord
   belongs_to :user
   validates :work_day, timeliness: { on_or_after: Time.now.since(2.weeks).monday }
-
+  validates :work_day, uniqueness: { scope: :user_id }
   validates :start_time, presence: true
   validates :end_time, presence: true
   validate :end_time_is_after_start_time
