@@ -25,6 +25,11 @@ class ShiftsController < ApplicationController
 
   def show
     @shift = Shift.includes(:user)
+    if user_signed_in? && current_user.admin?
+      redirect_to shift_path
+    else  
+      render :index
+    end
   end
 
   private
