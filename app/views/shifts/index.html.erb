@@ -1,12 +1,12 @@
-<h1>はたらく</h1>
-<h2>このアプリはみんなの「はたらく」をサポートします</h2>
+<h1>はたらっく</h1>
+<h2>このアプリはみんなの「はたらく」を「らく」にします。</h2>
 
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>
        <li><%= link_to '予定確認', shift_path(@shift), class: "admin-shift" %></li>
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% elsif user_signed_in? %>
-       <li><%= link_to current_user.last_name, new_shift_path(current_user.id), class: "user-name" %></li> 
+       <li><%= link_to current_user.last_name+'さんのページへ', new_user_path(current_user.id), class: "user-name" %></li> 
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
        <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
