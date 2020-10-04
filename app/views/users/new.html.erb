@@ -60,6 +60,7 @@
  <% @shift = Shift.where(user_id: current_user.id) %>
   <% @shift.each do |shift| %>
     <li>
+     <% if shift.work_day > Time.now %>
         <%= shift.work_day.strftime('%m/%d') %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
@@ -67,8 +68,12 @@
         休憩<%= shift.break_start.strftime('%H:%M') %>〜
         <%= shift.break_end.strftime('%H:%M') %>
       <% end %> 
+     <% end %>
+
+      <% if shift.work_day > Time.now.since(2.weeks).monday %>
         <%= link_to '変更する', edit_user_path(shift.id), method: :get, class:"register-red-btn" %>
         <%= link_to '取り消す', user_path(shift.id), method: :delete, class:"register-red-btn" %>
+      <% end %>
     </li>
   <% end %>  
 <li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
