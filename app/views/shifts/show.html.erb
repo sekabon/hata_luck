@@ -7,7 +7,8 @@
  <% @shift_mon=@shift.where(work_day:next_mon) %>
   <% @shift_mon.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -23,7 +24,8 @@
   <% @shift_tue=@shift.where(work_day:next_tue) %>
     <% @shift_tue.each do |shift| %>
       <li>
-          <%= shift.user.last_name %>さん
+          <%= shift.user.last_name %>
+          <%= shift.user.first_name %>
           <%= shift.start_time.strftime('%H:%M') %>〜
           <%= shift.end_time.strftime('%H:%M') %>
         <% if shift&.break_start.present? %>
@@ -39,7 +41,8 @@
  <% @shift_wed=@shift.where(work_day:next_wed) %>
   <% @shift_wed.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -55,7 +58,8 @@
  <% @shift_thu=@shift.where(work_day:next_thu) %>
   <% @shift_thu.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -71,7 +75,8 @@
  <% @shift_fri=@shift.where(work_day:next_fri) %>
   <% @shift_fri.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -87,7 +92,8 @@
  <% @shift_sat=@shift.where(work_day:next_sat) %>
   <% @shift_sat.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -103,7 +109,8 @@
  <% @shift_sun=@shift.where(work_day:next_sun) %>
   <% @shift_sun.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -120,7 +127,8 @@
  <% @shift_2mon=@shift.where(work_day:next2_mon) %>
   <% @shift_2mon.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -137,7 +145,8 @@
   <% @shift_2tue=@shift.where(work_day:next2_tue) %>
     <% @shift_2tue.each do |shift| %>
       <li>
-          <%= shift.user.last_name %>さん
+          <%= shift.user.last_name %>
+          <%= shift.user.first_name %>
           <%= shift.start_time.strftime('%H:%M') %>〜
           <%= shift.end_time.strftime('%H:%M') %>
         <% if shift&.break_start.present? %>
@@ -153,7 +162,8 @@
  <% @shift_2wed=@shift.where(work_day:next2_wed) %>
   <% @shift_2wed.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -169,7 +179,8 @@
  <% @shift_2thu=@shift.where(work_day:next2_thu) %>
   <% @shift_2thu.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -185,7 +196,8 @@
  <% @shift_2fri=@shift.where(work_day:next2_fri) %>
   <% @shift_2fri.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -201,7 +213,8 @@
  <% @shift_2sat=@shift.where(work_day:next2_sat) %>
   <% @shift_2sat.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -217,7 +230,8 @@
  <% @shift_2sun=@shift.where(work_day:next2_sun) %>
   <% @shift_2sun.each do |shift| %>
     <li>
-        <%= shift.user.last_name %>さん
+        <%= shift.user.last_name %>
+        <%= shift.user.first_name %>
         <%= shift.start_time.strftime('%H:%M') %>〜
         <%= shift.end_time.strftime('%H:%M') %>
       <% if shift&.break_start.present? %>
@@ -226,3 +240,4 @@
       <% end %>
     </li>
   <% end %>
+<li><%= link_to 'トップページへ', shifts_path(@shift), class: "sign-up" %></li>
