@@ -31,7 +31,7 @@
 ユーザーは、①アプリを開き、②ログインし、③日付→勤務開始時間→勤務終了時間を設定し、④登録ボタンを押すだけで予定提出完了！
  #### 新規登録とログイン機能
  
- ![login](https://user-images.githubusercontent.com/66765282/95073819-73fe0880-0748-11eb-9e11-5149144c2119.gif)
+ ![login3](https://user-images.githubusercontent.com/66765282/95143324-bc511100-07b0-11eb-8747-6cd6c310385f.gif)
  
  ユーザー管理にはdeviseを使用しました。<br>
  エラー発生時には日本語でエラーメッセージが表示されるようにrails-i18nを導入しました。<br>
