@@ -16,7 +16,7 @@
 ## 本番環境 
  HEROKUにデプロイしています。  
  こちらからアクセスできます。  
- [hata_luck](https://hata-luck-28277.herokuapp.com/)
+ [https://hata-luck-28277.herokuapp.com/](https://hata-luck-28277.herokuapp.com/)
 
 ### <テストユーザーアカウント>
  メールアドレス： yama@gmail.com  
@@ -31,7 +31,8 @@
 ユーザーは、①アプリを開き、②ログインし、③日付→勤務開始時間→勤務終了時間を設定し、④登録ボタンを押すだけで予定提出完了！
  #### 新規登録とログイン機能
  
- ![新規登録とログイン](3MwmYA7zTi5RqYK96mX01601860684-1601860766.gif)
+ ![login](https://user-images.githubusercontent.com/66765282/95073819-73fe0880-0748-11eb-9e11-5149144c2119.gif)
+ 
  ユーザー管理にはdeviseを使用しました。<br>
  エラー発生時には日本語でエラーメッセージが表示されるようにrails-i18nを導入しました。<br>
  
