@@ -131,11 +131,6 @@ legend {
 .error-message{
   color: red;
 }
- /* スマホ表示時 */
- @media (max-width: 599px) {
-  li{
-    width: 30%;
-  }
-}
+ 
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
