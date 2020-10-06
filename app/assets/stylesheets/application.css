@@ -20,17 +20,18 @@ h2{
   font-size: 2.4em;
 }
 h3{
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 li{
   list-style: none;
   margin-left: 15px;
-	margin-bottom: 5x;
-	font-size: 1.5em;
+	margin-bottom: 5px;
+	font-size: 1.8em;
 }
 ul{
-  display: flex;
+	display: flex;
+	flex-wrap: wrap;
   justify-content: space-around; 
 }
 
@@ -42,7 +43,7 @@ ul{
 select {
 	-webkit-appearance: none; 
 	appearance: none;
-	margin-bottom: 20px;
+	margin: 10px 0px;
 	padding: 10px 10px 5px 10px;
 	font-size: 93%;
 	line-height: 1.1em;
@@ -55,4 +56,10 @@ select {
 }
 .btn{
 	text-decoration: none;
+}
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  li{
+    width: 30%;
+  }
 }
