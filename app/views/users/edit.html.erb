@@ -2,16 +2,16 @@
   <h2>この日の予定を変更しますか？</h2>
 </header>
     <ul>
-      <li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "btn" %></li>
-      <li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "btn" %></li>
+      <li><%= link_to 'マイページへ', new_user_path(@shift), class: "btn" %></li>
+      <li><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>
     </ul>
 
-<%= form_with model: @shift, class:'shift-main', local: true do |f| %>
+<%= form_with model: @shift, local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
     <ul>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">日付</label>
+       <label>日付</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -20,7 +20,7 @@
      </li>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">出勤時間</label>
+       <label>出勤時間</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -29,7 +29,7 @@
      </li>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">退勤時間</label>
+       <label>退勤時間</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -38,7 +38,7 @@
      </li>
       <li>
         <div class='form-text-wrap'>
-          <label class="form-text">休憩開始</label>
+          <label>休憩開始</label>
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
@@ -47,7 +47,7 @@
       </li>
       <li>
         <div class='form-text-wrap'>
-          <label class="form-text">休憩終了</label>
+          <label>休憩終了</label>
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
@@ -55,7 +55,7 @@
         </div>
       </li>
     </ul> 
-    <div class='register-btn'>
+    <div class='shift-btn'>
       <%= f.submit "予定変更", class:"register-red-btn" %>
     </div>
  <% end %>

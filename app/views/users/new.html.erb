@@ -3,12 +3,12 @@
  <h2><%= Time.now.since(2.weeks).monday.strftime('%m/%d') %>(月)から一週間の予定を教えて下さい。</h2>
  <h3>(締切は<%= Time.now.next_week.monday.-(1.day).strftime('%m/%d') %>(日)です。)</h3>
 </header>
- <%= form_with model: @shift, url: shifts_path(current_user.id), class:'shift-main', local: true do |f| %>
+ <%= form_with model: @shift, url: shifts_path(current_user.id), local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
     <ul>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">日付</label>
+       <label>日付</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -17,7 +17,7 @@
      </li>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">出勤時間</label>
+       <label>出勤時間</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -26,7 +26,7 @@
      </li>
      <li>
       <div class='form-text-wrap'>
-       <label class="form-text">退勤時間</label>
+       <label>退勤時間</label>
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
@@ -35,7 +35,7 @@
      </li>
       <li>
         <div class='form-text-wrap'>
-          <label class="form-text">休憩開始</label>
+          <label>休憩開始</label>
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
@@ -44,7 +44,7 @@
       </li>
       <li>
         <div class='form-text-wrap'>
-          <label class="form-text">休憩終了</label>
+          <label>休憩終了</label>
           <span class="indispensable">(任意)</span>
         </div>
         <div class="datetime">
@@ -52,15 +52,17 @@
         </div>
       </li>
     </ul> 
-    <div class='register-btn'>
+    <div class='shift-btn'>
       <%= f.submit "予定提出", class:"register-red-btn" %>
     </div>
  <% end %>
-
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+  </div>
 <h3>提出済みの予定はこちらです。</h3>
  <% @shift = Shift.where(user_id: current_user.id) %>
   <% @shift.each do |shift| %>
-    <li>
+    <li class="shift_time" >
      <% if shift.work_day > Time.now %>
         <%= shift.work_day.strftime('%m/%d') %>
         <%= shift.start_time.strftime('%H:%M') %>〜
@@ -72,9 +74,9 @@
      <% end %>
 
       <% if shift.work_day > Time.now.since(2.weeks).monday.-(1.day) %>
-        <%= link_to '変更する', edit_user_path(shift.id), method: :get, class:"register-red-btn" %>
-        <%= link_to '取り消す', user_path(shift.id), method: :delete, class:"register-red-btn" %>
+        <%= link_to '変更', edit_user_path(shift.id), method: :get, class:"register-red-btn" %>
+        <%= link_to '取消', user_path(shift.id), method: :delete, class:"register-red-btn" %>
       <% end %>
     </li>
   <% end %>  
-<li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "btn" %></li>
+ <li class="shift_time" ><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>

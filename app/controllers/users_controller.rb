@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def destroy
     shift = Shift.find(params[:id])
     if shift.destroy
-      redirect_to root_path    
+      redirect_to new_user_path, notice: "予定を取消しました！"     
     else
       render :new
     end
