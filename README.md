@@ -37,7 +37,7 @@
  エラー発生時には日本語でエラーメッセージが表示されるようにrails-i18nを導入しました。<br>
  
  #### ☆予定登録
- ![update3](https://user-images.githubusercontent.com/66765282/95164829-b590c100-07e5-11eb-862d-59a429b46b7e.gif)
+![update33](https://user-images.githubusercontent.com/66765282/95165593-474cfe00-07e7-11eb-91c0-ae3c369fbf45.gif)
 
  ＜とにかく使いやすく＞<br>
  スマホで使用することを意識してレイアウトを変更しました。(ブラウザでのレイアウトが若干不自然です。)<br>
