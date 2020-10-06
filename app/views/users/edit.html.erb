@@ -1,9 +1,9 @@
 <header>
-  <h3>この日の予定を変更しますか？</h3>
+  <h2>この日の予定を変更しますか？</h2>
 </header>
     <ul>
-      <li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "sign-up" %></li>
-      <li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "sign-up" %></li>
+      <li><%= link_to 'マイページへ戻る', new_user_path(@shift), class: "btn" %></li>
+      <li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "btn" %></li>
     </ul>
 
 <%= form_with model: @shift, class:'shift-main', local: true do |f| %>

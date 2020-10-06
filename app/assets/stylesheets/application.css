@@ -13,11 +13,27 @@
  *= require_tree .
  *= require_self
  */
-
+h1{
+  font-size: 3em;
+}
+h2{
+  font-size: 2.4em;
+}
+h3{
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+li{
+  list-style: none;
+  margin-left: 15px;
+	margin-bottom: 5x;
+	font-size: 1.5em;
+}
 ul{
   display: flex;
   justify-content: space-around; 
 }
+
 .datetime{
   margin-top: 8px;
   margin-left: 32px;
@@ -36,4 +52,7 @@ select {
 	background-size: 12px 10px;
 	background-position: right 10px center;
 	background-color: #bddfff;
+}
+.btn{
+	text-decoration: none;
 }

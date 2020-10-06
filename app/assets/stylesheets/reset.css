@@ -128,6 +128,8 @@ select {
 legend {
   color:#000;
 }
-
+.error-message{
+  color: red;
+}
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
