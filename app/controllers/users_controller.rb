@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def index
+    @user = User.includes(:user)
+    @shift = Shift.includes(:user)
+  end
+
+  
   def new
     @shift = Shift.new
   end

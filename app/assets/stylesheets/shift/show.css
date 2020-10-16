@@ -1,0 +1,29 @@
+h1{
+  font-size: 3em;
+}
+h2{
+  font-size: 2.3em;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: rgba(4, 72, 128, 0.7);
+}
+h3{
+  font-size: 2em;
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  font-size: 1em;
+  color: white;
+}
+li{
+  text-decoration: none;
+  font-size: 2em;
+  list-style: none;
+  color: black;
+}
+.btn{
+  text-decoration: none;
+  color: white;
+}

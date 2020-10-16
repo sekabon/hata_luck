@@ -1,8 +1,12 @@
 <header>
   <h1>予定の確認</h1>
 </header>
+
     <% next_mon=Time.now.next_week.monday %>
-  <h2><%= next_mon.strftime('%m/%d') %>(月)からの一週間</h2>
+  <h2>
+    <%= next_mon.strftime('%m/%d') %>(月)からの一週間
+    <%= link_to 'トップページへ戻る', shifts_path(@shift), class: "btn" %>
+  </h2>
   <h3>
     <%= next_mon.strftime('%m/%d') %>(月)
   </h3>
@@ -242,4 +246,3 @@
       <% end %>
     </li>
   <% end %>
-<li><%= link_to 'トップページへ戻る', shifts_path(@shift), class: "btn" %></li>
