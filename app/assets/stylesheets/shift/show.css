@@ -1,29 +1,29 @@
 h1{
-  font-size: 3em;
+  font-size: 3rem;
 }
 h2{
-  font-size: 2.3em;
+  font-size: 2.3rem;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
   background-color: rgba(4, 72, 128, 0.7);
 }
 h3{
-  font-size: 2em;
+  font-size: 2rem;
 }
 ul{
   display: flex;
   justify-content: space-around;
-  font-size: 1em;
+  font-size: 1rem;
   color: white;
 }
 li{
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2rem;
   list-style: none;
   color: black;
 }
-.btn{
+.w_btn{
   text-decoration: none;
   color: white;
 }

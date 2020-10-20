@@ -5,7 +5,7 @@
 </header>
  <%= form_with model: @shift, url: shifts_path(current_user.id), local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
-    <ul>
+    <ul class="select">
      <li>
       <div class='form-text-wrap'>
        <label>日付</label>

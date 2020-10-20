@@ -1,0 +1,20 @@
+h2{
+  display: flex;
+  justify-content: center;
+}
+.select{
+  display: flex;
+  flex-flow: wrap;
+}
+
+
+.datetime{
+  display: inline-block;
+  width: auto;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.btn{
+  color: black;
+}
