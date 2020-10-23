@@ -8,13 +8,25 @@
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
-html{
-  color:#000;
-  background-image: url("../images/business_kyouryoku.png");
-  background-size: 100%;
-  background-color:rgba(255,255,255,0.5);
-  background-blend-mode:lighten;
+
+  
+@media (max-width: 640px) {
+  html {
+    background-image: url("../images/poupelle_banner4.jpg");
+    background-size: 100%;
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+  }
 }
+@media (min-width: 641px) {
+  html {
+    background-image: url("../images/poupelle_normal.jpg");
+    background-size: 100%;
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+  }
+}
+
 header{
   text-align: center;
   background-color: rgba(1, 25, 46, 0.7);

@@ -52,7 +52,7 @@
         </div>
       </li>
     </ul> 
-    <div class='shift-btn'>
+    <div>
       <%= f.submit "予定提出", class:"register-red-btn" %>
     </div>
  <% end %>
@@ -62,7 +62,7 @@
 <h3>提出済みの予定はこちらです。</h3>
  <% @shift = Shift.where(user_id: current_user.id) %>
   <% @shift.each do |shift| %>
-    <li class="shift_time" >
+    <li class="shift_btn" >
      <% if shift.work_day > Time.now %>
         <%= shift.work_day.strftime('%m/%d') %>
         <%= shift.start_time.strftime('%H:%M') %>〜
@@ -79,4 +79,4 @@
       <% end %>
     </li>
   <% end %>  
- <li class="shift_time" ><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>
+ <li><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>

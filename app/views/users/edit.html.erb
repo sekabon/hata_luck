@@ -8,7 +8,7 @@
 
 <%= form_with model: @shift, local: true do |f| %>
     <%= render 'layouts/error_messages', model: @shift %> 
-    <ul>
+    <ul class="select">
      <li>
       <div class='form-text-wrap'>
        <label>日付</label>
@@ -55,7 +55,7 @@
         </div>
       </li>
     </ul> 
-    <div class='shift-btn'>
+    <li>
       <%= f.submit "予定変更", class:"register-red-btn" %>
-    </div>
+    </li>
  <% end %>

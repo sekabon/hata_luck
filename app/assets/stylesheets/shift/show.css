@@ -1,27 +1,32 @@
 h1{
-  font-size: 3rem;
+  font-size: calc(112.5% + 1.5vw) ;
 }
 h2{
-  font-size: 2.3rem;
-  display: flex;
-  justify-content: space-between;
+  font-size: calc(112.5% + 1.2vw);
+  /* display: flex;
+  justify-content: start; */
   text-decoration: none;
   background-color: rgba(4, 72, 128, 0.7);
 }
 h3{
-  font-size: 2rem;
+  font-size: calc(112.5% + 1vw);
 }
 ul{
   display: flex;
   justify-content: space-around;
-  font-size: 1rem;
+  font-size: calc(110% + 0.1vw);
   color: white;
 }
 li{
   text-decoration: none;
-  font-size: 2rem;
-  list-style: none;
+  font-size: calc(112.5% + 0.3vw);
+  list-style: none; 
   color: black;
+}
+p{
+  float: right;
+  font-size: calc(112.5% + 0.2vw);
+  color: gray;
 }
 .w_btn{
   text-decoration: none;
