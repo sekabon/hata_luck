@@ -11,13 +11,13 @@ h2{
 .datetime{
   display: inline-block;
   width: auto;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 5px;
 }
 .date{
   display: inline-block;
   width: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 5px;
 }
 
