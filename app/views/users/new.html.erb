@@ -8,10 +8,10 @@
     <ul class="select">
      <li>
       <div class='form-text-wrap'>
-       <label>日付</label>
+       <label class="datelable">日付</label>
        <span class="indispensable">(必須)</span>
       </div>
-      <div class="datetime">
+      <div class="date">
        <%= f.date_select :work_day, date_separator: "月", use_month_numbers: true, discard_year: true, default: Time.now.since(2.weeks).monday, class:"input-default", id:"work_day" %>日
       </div>
      </li>
@@ -21,7 +21,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :start_time, ignore_date: true, include_blank: "--", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>から
+       <%= f.time_select :start_time, ignore_date: true, include_blank: "--", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>
       </div>
      </li>
      <li>
@@ -30,7 +30,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :end_time, ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>まで
+       <%= f.time_select :end_time, ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>
       </div>
      </li>
       <li>
@@ -52,17 +52,17 @@
         </div>
       </li>
     </ul> 
-    <div>
-      <%= f.submit "予定提出", class:"register-red-btn" %>
-    </div>
+    <li class="new-btn">
+      <%= f.submit "予定提出", class:"new-red-btn" %>
+    </li>
  <% end %>
   <div class='login-flash-message'>
     <%= flash[:notice] %>
   </div>
-<h3>提出済みの予定はこちらです。</h3>
+<h3 class="new-btn">提出済みの予定はこちらです。</h3>
  <% @shift = Shift.where(user_id: current_user.id) %>
   <% @shift.each do |shift| %>
-    <li class="shift_btn" >
+    <li class="new-btn" >
      <% if shift.work_day > Time.now %>
         <%= shift.work_day.strftime('%m/%d') %>
         <%= shift.start_time.strftime('%H:%M') %>〜
@@ -74,9 +74,10 @@
      <% end %>
 
       <% if shift.work_day > Time.now.since(2.weeks).monday.-(1.day) %>
-        <%= link_to '変更', edit_user_path(shift.id), method: :get, class:"register-red-btn" %>
-        <%= link_to '取消', user_path(shift.id), method: :delete, class:"register-red-btn" %>
+        <%= link_to '変更', edit_user_path(shift.id), method: :get, class:"new-red-btn" %>
+        <%= link_to '取消', user_path(shift.id), method: :delete, class:"new-red-btn" %>
       <% end %>
     </li>
   <% end %>  
- <li><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>
+ <li class="new-btn"><%= link_to 'トップページへ', shifts_path(@shift), class: "btn" %></li>
+ 

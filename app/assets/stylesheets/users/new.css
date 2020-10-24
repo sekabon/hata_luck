@@ -1,0 +1,67 @@
+h2{
+  display: flex;
+  justify-content: center;
+}
+.select{
+  display: flex;
+  flex-flow: wrap;
+}
+
+
+.datetime{
+  display: inline-block;
+  width: auto;
+  margin-top: 20px;
+  padding: 5px;
+}
+.date{
+  display: inline-block;
+  width: auto;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.btn{
+  color: black;
+}
+.new-btn {
+  width: 100%;
+  margin: 0 auto;
+  
+  
+}
+.new-red-btn{
+  width: 30%;
+  background-color: rgb(245, 60, 60, 0.7);
+  border: 1px solid rgb(245, 60, 60, 0.7);
+  padding: 2px 5px;
+  color: #fff;
+  line-height: 24px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  h2{
+    display: flex;
+    flex-flow: wrap;
+  }
+  .form-text-wrap{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .date{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .datetime{
+    width: 50%;
+    display: flex;
+    
+  }
+  .new-red-btn{
+    width: 50%;
+  }
+}

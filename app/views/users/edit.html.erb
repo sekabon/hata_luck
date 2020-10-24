@@ -14,7 +14,7 @@
        <label>日付</label>
        <span class="indispensable">(必須)</span>
       </div>
-      <div class="datetime">
+      <div class="date">
        <%= f.date_select :work_day, date_separator: "月", use_month_numbers: true, discard_year: true, default: Time.now.since(2.weeks).monday, class:"input-default", id:"work_day" %>日
       </div>
      </li>
@@ -24,7 +24,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :start_time, ignore_date: true, include_blank: "--", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>から
+       <%= f.time_select :start_time, ignore_date: true, include_blank: "--", start_hour: 9, end_hour: 22, minute_step: 15, class:"input-default", id:"start_time" %>
       </div>
      </li>
      <li>
@@ -33,7 +33,7 @@
        <span class="indispensable">(必須)</span>
       </div>
       <div class="datetime">
-       <%= f.time_select :end_time, ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>まで
+       <%= f.time_select :end_time, ignore_date: true, include_blank: "--", start_hour: 11, end_hour: 24, minute_step: 15, class:"input-default", id:"end_time" %>
       </div>
      </li>
       <li>
@@ -55,7 +55,7 @@
         </div>
       </li>
     </ul> 
-    <li>
-      <%= f.submit "予定変更", class:"register-red-btn" %>
+    <li class="edit-btn">
+      <%= f.submit "予定変更", class:"edit-red-btn" %>
     </li>
  <% end %>
