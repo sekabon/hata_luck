@@ -148,8 +148,7 @@ select {
 	line-height: 1.1em;
 	border-radius: 5px;
 	border: none;
-	/* background-image: url(./images/icon_arrow.svg); */
-	/* background-repeat: no-repeat; */
+	
 	background-size: 12px 10px;
 	background-position: right 10px center;
 	background-color: rgba(255,255,255,0.6);
@@ -161,10 +160,7 @@ select {
 legend {
   color:#000;
 }
-.error-message{
-  color: red;
-  font-size: 32px;
-}
+
 
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }

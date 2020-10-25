@@ -16,11 +16,11 @@ class ShiftsController < ApplicationController
   end
 
   def update
-    shift = Shift.find(params[:id])
-    if shift.update(shift_params)
+    @shift = Shift.find(params[:id])
+    if @shift.update(shift_params)
       redirect_to new_user_path, notice: "予定を変更しました！" 
     else 
-      render :edit
+      render "users/edit"
     end
   end
 

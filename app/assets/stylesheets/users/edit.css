@@ -11,6 +11,7 @@
   line-height: 24px;
   font-size: 24px;
   cursor: pointer;
+  border-radius: 5px;
 }
 @media (max-width: 640px) {
   h2{
@@ -34,5 +35,6 @@
   }
   .edit-red-btn{
     width: 50%;
+    border-radius: 5px;
   }
 }

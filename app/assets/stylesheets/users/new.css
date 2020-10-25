@@ -22,7 +22,13 @@ h2{
 }
 
 .btn{
-  color: rgb(10, 30, 210);
+  background-color: rgba(20, 240, 20, 0.3);
+  border: 1px solid rgba(20, 240, 20, 0.3);
+  color: #fff;
+  line-height: 24px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .new-btn {
   width: 100%;
@@ -31,7 +37,7 @@ h2{
   
 }
 .new-red-btn{
-  width: 30%;
+  width: 200px;
   background-color: rgba(245, 60, 60, 0.7);
   border: 1px solid rgba(245, 60, 60, 0.7);
   padding: 2px 5px;
@@ -40,6 +46,13 @@ h2{
   font-size: 24px;
   cursor: pointer;
   text-decoration: none;
+  border-radius: 5px;
+}
+.error-message{
+  color: red; 
+}
+.login-flash-message{
+  font-size: 24px;
 }
 @media (max-width: 640px) {
   h2{
@@ -63,5 +76,11 @@ h2{
   }
   .new-red-btn{
     width: 50%;
+    border-radius: 5px;
   }
+  .error-message{
+    color: red;
+    display: flex;
+  }
+  
 }
