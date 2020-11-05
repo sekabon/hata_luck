@@ -17,7 +17,11 @@
  HEROKUにデプロイしています。  
  こちらからアクセスできます。  
  [https://hata-luck-28277.herokuapp.com/](https://hata-luck-28277.herokuapp.com/)
-
+ 
+### <Basic認証>
+ ユーザー名： toshi
+ パスワード： 1048
+ 
 ### <テストユーザーアカウント>
  メールアドレス： yama@gmail.com  
  パスワード： yamada01
