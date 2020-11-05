@@ -19,7 +19,7 @@
  [https://hata-luck-28277.herokuapp.com/](https://hata-luck-28277.herokuapp.com/)
  
 ### <Basic認証>
- ユーザー名： toshi
+ ユーザー名： toshi <br>
  パスワード： 1048
  
 ### <テストユーザーアカウント>
